@@ -159,8 +159,18 @@ public class CharacterMovement : MonoBehaviour
         vBlend = Mathf.Lerp(vBlend, _input.move.y, Time.deltaTime * targetLockBlendSpeed);
         hBlend = Mathf.Lerp(hBlend, _input.move.x, Time.deltaTime * targetLockBlendSpeed);
 
-        _animator.SetFloat("Horizontal", hBlend, strafeBlend, Time.deltaTime);
-        _animator.SetFloat("Vertical", vBlend, strafeBlend, Time.deltaTime);
+        if (strafe && !_input.sprint) 
+        {
+            _animator.SetFloat("Horizontal", hBlend, strafeBlend, Time.deltaTime);
+            _animator.SetFloat("Vertical", vBlend, strafeBlend, Time.deltaTime);
+        }
+        else 
+        {
+            _animator.SetFloat("Vertical", 1.5f, strafeBlend, Time.deltaTime);
+            _animator.SetFloat("Horizontal", 0, strafeBlend, Time.deltaTime);
+
+        }
+
     }
 
     private void LateUpdate()
@@ -260,7 +270,7 @@ public class CharacterMovement : MonoBehaviour
         // if there is a move input rotate player when the player is moving
         if (_input.move != Vector2.zero)
         {
-            if (strafe)
+            if (strafe && !_input.sprint)
             {
                 Vector3 rotationOffset = lockOnTarget.transform.position - transform.position;
                 rotationOffset.y = 0;
@@ -298,7 +308,7 @@ public class CharacterMovement : MonoBehaviour
 
         // move the player
 
-        if (strafe)
+        if (strafe && !_input.sprint)
         {
 
             velocity = Vector3.Lerp(velocity, (transform.forward * _input.move.y) +
