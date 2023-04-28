@@ -61,10 +61,9 @@ public class ActiveRagdollController : MonoBehaviour
         anim.SetFloat("Vertical", vertical);
         anim.SetFloat("Horizontal", horizontal);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && GroundCount>0)
         {
-            hips.AddForce(transform.up * jumpForce * GroundCount, ForceMode.Impulse);
-           
+            hips.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
     }
 }
