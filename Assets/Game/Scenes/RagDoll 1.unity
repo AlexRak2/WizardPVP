@@ -295,12 +295,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -1588,12 +1588,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 200
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 200
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -1828,7 +1828,7 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 750
+    positionSpring: 800
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
@@ -4038,12 +4038,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 200
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 200
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -4610,12 +4610,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -5166,9 +5166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee93d9e9727cd645b807eaadf443515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  straftSpeed: 70
-  jumpForce: 50
+  speed: 70
+  straftSpeed: 60
+  jumpForce: 70
   hips: {fileID: 479889353}
   hipsJoint: {fileID: 479889357}
   GroundCount: 0
@@ -5455,12 +5455,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -5917,12 +5917,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 210
+    positionSpring: 220
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
