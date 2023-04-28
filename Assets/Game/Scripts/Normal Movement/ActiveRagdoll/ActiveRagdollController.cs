@@ -11,10 +11,14 @@ public class ActiveRagdollController : MonoBehaviour
     public float jumpForce;
 
     public Rigidbody hips;
+    public ConfigurableJoint hipsJoint;
 
     public float GroundCount;
     public GroundDetection[] gd;
     public Animator anim;
+
+    public Transform lockOnTarget;
+    public Transform BasedPosition;
     
     void Start()
     {
@@ -25,12 +29,17 @@ public class ActiveRagdollController : MonoBehaviour
     float vertical;
     private void FixedUpdate()
     {
+        
         GroundCount = 0;
         for (int i = 0; i < gd.Length; i++)
         {
 
             GroundCount += gd[i].grounded ? 0.5f : 0;
         }
+
+  
+        BasedPosition.forward = lockOnTarget.transform.forward;
+        hipsJoint.targetRotation = Quaternion.Euler(0,0, -BasedPosition.eulerAngles.y);
 
         if (vertical != 0)
         {

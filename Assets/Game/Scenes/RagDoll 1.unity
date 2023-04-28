@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,9 +220,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &63407527
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -295,12 +295,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -873,7 +873,7 @@ Transform:
   m_GameObject: {fileID: 221150630}
   m_LocalRotation: {x: -0.00000014901163, y: -1.2434499e-14, z: 0.00000004371144,
     w: 1}
-  m_LocalPosition: {x: 0.9428525, y: 2.1395779, z: -3.3304138}
+  m_LocalPosition: {x: 0.9428525, y: 2.7995777, z: -3.3304138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1513,9 +1513,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &425803834
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1714,14 +1714,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479889352}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 5
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &479889355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2354,9 +2354,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &650138076
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2722,9 +2722,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &765452021
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3567,7 +3567,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962085252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3867,6 +3867,37 @@ Transform:
   m_Father: {fileID: 549040502}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1120069085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120069086}
+  m_Layer: 0
+  m_Name: Based
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1120069086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120069085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1472513874}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145000279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,9 +3963,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1166031291
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4579,12 +4610,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -4616,9 +4647,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1359639948
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4942,8 +4973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.8, z: 1}
-  ShoulderOffset: {x: 2.27, y: 0.43, z: 0}
+  Damping: {x: 0.3, y: 0.8, z: 1}
+  ShoulderOffset: {x: 2.27, y: 1.09, z: 0}
   VerticalArmLength: 0
   CameraSide: 0.6
   CameraDistance: 1.6
@@ -5119,6 +5150,7 @@ Transform:
   - {fileID: 1870468341}
   - {fileID: 172865887}
   - {fileID: 1390920153}
+  - {fileID: 1120069086}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5138,11 +5170,14 @@ MonoBehaviour:
   straftSpeed: 70
   jumpForce: 50
   hips: {fileID: 479889353}
+  hipsJoint: {fileID: 479889357}
   GroundCount: 0
   gd:
   - {fileID: 1359639949}
   - {fileID: 1478410106}
   anim: {fileID: 8718128975872376191}
+  lockOnTarget: {fileID: 962085253}
+  BasedPosition: {fileID: 1120069086}
 --- !u!114 &1472513876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5420,12 +5455,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -5457,9 +5492,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1478410105
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5807,9 +5842,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1566661984
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -5882,12 +5917,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 210
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -6390,13 +6425,13 @@ Rigidbody:
   m_GameObject: {fileID: 1828358941}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1828358944
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -7188,9 +7223,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &2046460712
 CapsuleCollider:
   m_ObjectHideFlags: 0
