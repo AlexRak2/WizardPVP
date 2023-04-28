@@ -5,8 +5,9 @@ using UnityEngine;
 public class RagDollController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private ConfigurableJoint hipJoint;
-    [SerializeField] private Rigidbody hip;
+    [SerializeField] private float jump = 5f;
+    [SerializeField] public ConfigurableJoint hipJoint;
+    [SerializeField] public Rigidbody hip;
 
     [SerializeField] private Animator targetAnimator;
 
@@ -29,12 +30,17 @@ public class RagDollController : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
 
-            hipJoint.targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+            //hipJoint.targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
             hip.AddForce(direction * speed);
 
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            hip.AddForce(Vector3.up * jump, ForceMode.Impulse);
         }
 
         targetAnimator.SetFloat("Vertical", direction.z);
         targetAnimator.SetFloat("Horizontal", direction.x);
     }
+
 }
