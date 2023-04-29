@@ -43,7 +43,7 @@ public class ActiveRagdollController : MonoBehaviour
   
         BasedPosition.forward = lockOnTarget.transform.forward;
         hipsJoint.targetRotation = Quaternion.Euler(0,0, -BasedPosition.eulerAngles.y);
-        Vector3 targetVel = new Vector3(0, hips.velocity.y, 0);
+        Vector3 targetVel = Vector3.zero;
         if (vertical != 0)
         {
             //hips.AddForce(-hips.transform.up * speed * vertical * Time.fixedDeltaTime, ForceMode.VelocityChange);
@@ -55,14 +55,11 @@ public class ActiveRagdollController : MonoBehaviour
             //hips.AddForce(hips.transform.right * straftSpeed * horizontal * Time.fixedDeltaTime, ForceMode.VelocityChange);
             targetVel += hips.transform.right * straftSpeed * horizontal;
         }
+        targetVel = Vector3.ClampMagnitude(targetVel, speed);
+
+        targetVel.y = hips.velocity.y;
 
         hips.velocity = targetVel;
-
-        if (vertical == 0 && horizontal == 0 && GroundCount > 0)
-        {
-            Vector3 counterVel = new Vector3(hips.velocity.x, 0, hips.velocity.z);
-            //hips.AddForce(-counterVel, ForceMode.VelocityChange);
-        }
     }
 
     private void Update()
