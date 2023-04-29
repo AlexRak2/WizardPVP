@@ -33,8 +33,11 @@ public class IKController : MonoBehaviour
     {
         if (anim)
         {
-            anim.SetLookAtWeight(weight, bodyWeight, headWeight, eyesWeight, clampWeight);
-            anim.SetLookAtPosition(lookAtPosition.position);
+            if (lookAtPosition) 
+            {
+                anim.SetLookAtWeight(weight, bodyWeight, headWeight, eyesWeight, clampWeight);
+                anim.SetLookAtPosition(lookAtPosition.position);
+            }
 
 
             #region RIGHT HAND IK

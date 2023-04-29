@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class IKLookAt : MonoBehaviour
 {
     [Range(0f, 1f)]

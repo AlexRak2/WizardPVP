@@ -1,9 +1,10 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraMovement : MonoBehaviour
+public class CameraMovement : NetworkBehaviour
 {
 
     [Header("Cinemachine")]
@@ -27,43 +28,37 @@ public class CameraMovement : MonoBehaviour
     private float _cinemachineTargetPitch;
 
     private PlayerInput _playerInput;
-    private CharacterInput _input;
     private const float _threshold = 0.01f;
 
-
+    Vector2 _lookInput;
 
     public bool strafe;
-    private bool IsCurrentDeviceMouse
-    {
-        get
-        {
-            return _playerInput.currentControlScheme == "KeyboardMouse";
-        }
-    }
 
 
     private void Start()
     {
         _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-        _input = GetComponent<CharacterInput>();
-        _playerInput = GetComponent<PlayerInput>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void LateUpdate()
     {
+        if (!isOwned) return;
+
+        _lookInput = new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
         CameraRotation();
     }
 
     private void CameraRotation()
     {
         // if there is an input and camera position is not fixed
-        if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition) 
+        if (_lookInput.sqrMagnitude >= _threshold && !LockCameraPosition) 
         {
             //Don't multiply mouse input by Time.deltaTime;
-            float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+            float deltaTimeMultiplier =  1.0f;
 
-            _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-            _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+            _cinemachineTargetYaw += _lookInput.x * deltaTimeMultiplier;
+            _cinemachineTargetPitch += _lookInput.y * deltaTimeMultiplier;
         }
 
         // clamp our rotations so our values are limited 360 degrees
