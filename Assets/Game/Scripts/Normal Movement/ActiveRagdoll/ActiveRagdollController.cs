@@ -42,7 +42,10 @@ public class ActiveRagdollController : MonoBehaviour
 
   
         BasedPosition.forward = lockOnTarget.transform.forward;
-        hipsJoint.targetRotation = Quaternion.Euler(0,0, -BasedPosition.eulerAngles.y);
+        if (Input.GetKey(KeyCode.LeftShift) || (horizontal != 0 || vertical != 0))
+        {
+            hipsJoint.targetRotation = Quaternion.Euler(0, 0, -BasedPosition.eulerAngles.y);
+        }
         Vector3 targetVel = Vector3.zero;
         if (vertical != 0)
         {
