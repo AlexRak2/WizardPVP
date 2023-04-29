@@ -34,7 +34,7 @@ public class GroundDetection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.SweepTest(Vector3.down, out RaycastHit hit, 0.4f))
+        if (rb.SweepTest(Vector3.down, out RaycastHit hit, 0.25f))
         {
             if (IsFloor(hit.normal))
             {
@@ -71,7 +71,7 @@ public class GroundDetection : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        rb.SweepTest(Vector3.down, out RaycastHit hit, 0.4f);
+        rb.SweepTest(Vector3.down, out RaycastHit hit, 0.25f);
 
         Gizmos.DrawLine(hit.point, hit.point + new Vector3(0, hit.distance, 0));
     }
