@@ -43,14 +43,19 @@ public class ActiveRagdollController : MonoBehaviour
 
         if (vertical != 0)
         {
-            hips.AddForce(-hips.transform.up * speed * vertical);
+            hips.AddForce(-hips.transform.up * speed * vertical * Time.fixedDeltaTime, ForceMode.VelocityChange);
         }
 
         if (horizontal != 0)
         {
-            hips.AddForce(hips.transform.right * straftSpeed * horizontal);
+            hips.AddForce(hips.transform.right * straftSpeed * horizontal * Time.fixedDeltaTime, ForceMode.VelocityChange);
         }
 
+        if (vertical == 0 && horizontal == 0 && GroundCount > 0)
+        {
+            Vector3 counterVel = new Vector3(hips.velocity.x, 0, hips.velocity.z);
+            hips.AddForce(-counterVel* 0.8f, ForceMode.VelocityChange);
+        }
     }
 
     private void Update()
