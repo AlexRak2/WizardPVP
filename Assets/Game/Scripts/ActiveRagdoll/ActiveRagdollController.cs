@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Mirror;
 
-public class ActiveRagdollController : MonoBehaviour
+public class ActiveRagdollController : NetworkBehaviour
 {
 
     public float speed;
@@ -20,7 +21,7 @@ public class ActiveRagdollController : MonoBehaviour
 
     public Transform lockOnTarget;
     public Transform BasedPosition;
-
+ 
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class ActiveRagdollController : MonoBehaviour
     float vertical;
     private void FixedUpdate()
     {
+        if (!isOwned) return;
         
         GroundCount = 0;
         for (int i = 0; i < gd.Length; i++)
@@ -39,7 +41,7 @@ public class ActiveRagdollController : MonoBehaviour
             GroundCount += gd[i].grounded ? 0.5f : 0;
         }
 
-  
+        
         BasedPosition.forward = lockOnTarget.transform.forward;
         if (Input.GetKey(KeyCode.LeftShift) || (horizontal != 0 || vertical != 0))
         {
@@ -66,6 +68,7 @@ public class ActiveRagdollController : MonoBehaviour
 
     private void Update()
     {
+        if (!isOwned) return;
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
