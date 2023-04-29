@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Mirror;
 
-public class ActiveRagdollController : NetworkBehaviour
+public class ActiveRagdollController : MonoBehaviour
 {
 
     public float speed;
@@ -22,8 +21,7 @@ public class ActiveRagdollController : NetworkBehaviour
     public Transform lockOnTarget;
     public Transform BasedPosition;
 
-    public TMP_Text speedText;
-    
+
     void Start()
     {
         
@@ -33,8 +31,7 @@ public class ActiveRagdollController : NetworkBehaviour
     float vertical;
     private void FixedUpdate()
     {
-        if (!isOwned) return;
-
+        
         GroundCount = 0;
         for (int i = 0; i < gd.Length; i++)
         {
@@ -74,10 +71,7 @@ public class ActiveRagdollController : NetworkBehaviour
 
         anim.SetFloat("Vertical", vertical);
         anim.SetFloat("Horizontal", horizontal);
-        anim.SetBool("IsGrounded", GroundCount > 0);
-
-        if(speedText)
-            speedText.text = new Vector3(hips.velocity.x, 0, hips.velocity.z).magnitude.ToString();
+        
         if (Input.GetKeyDown(KeyCode.Space) && GroundCount>0)
         {
             hips.AddForce(transform.up * jumpForce, ForceMode.Impulse);

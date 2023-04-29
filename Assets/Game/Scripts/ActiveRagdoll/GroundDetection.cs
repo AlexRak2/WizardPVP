@@ -7,7 +7,6 @@ public class GroundDetection : MonoBehaviour
     ActiveRagdollController controller;
     public Rigidbody rb;
 
-    public float groundLength = 0.4f;
     public float maxSlopeAngle = 45;
 
 
@@ -35,7 +34,7 @@ public class GroundDetection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.SweepTest(Vector3.down, out RaycastHit hit, groundLength))
+        if (rb.SweepTest(Vector3.down, out RaycastHit hit, 0.25f))
         {
             if (IsFloor(hit.normal))
             {
@@ -72,7 +71,7 @@ public class GroundDetection : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        rb.SweepTest(Vector3.down, out RaycastHit hit, groundLength);
+        rb.SweepTest(Vector3.down, out RaycastHit hit, 0.25f);
 
         Gizmos.DrawLine(hit.point, hit.point + new Vector3(0, hit.distance, 0));
     }
@@ -85,5 +84,4 @@ public class GroundDetection : MonoBehaviour
     {
         return Vector3.Angle(Vector3.up, v) < maxSlopeAngle;
     }
-
 }
