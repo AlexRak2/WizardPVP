@@ -6389,9 +6389,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  speed: 5
-  straftSpeed: 5
-  jumpForce: 50
+  speed: 8
+  straftSpeed: 8
+  jumpForce: 75
   hips: {fileID: 4828587010140705716}
   hipsJoint: {fileID: 4828587010140705712}
   GroundCount: 0
