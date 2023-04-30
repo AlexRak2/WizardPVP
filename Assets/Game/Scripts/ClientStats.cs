@@ -38,7 +38,7 @@ public class ClientStats : NetworkBehaviour, IDamageable
 
     private void SetRagDoll(bool value)
     {
-        GetComponentInChildren<Animator>().enabled = false;
+        GetComponentInChildren<Animator>().enabled = value ? false : true;
 
         foreach (ConfigurableJoint joint in joints)
         {
@@ -47,7 +47,7 @@ public class ClientStats : NetworkBehaviour, IDamageable
             joint.angularXDrive = jointDrive;
             joint.angularYZDrive = jointDrive;
 
-            joint.gameObject.layer = LayerMask.NameToLayer("RagDoll_Ignore");
+            joint.gameObject.layer = value ? LayerMask.NameToLayer("RagDoll_Ignore") : LayerMask.NameToLayer("RagDoll");
         }
     }
 
