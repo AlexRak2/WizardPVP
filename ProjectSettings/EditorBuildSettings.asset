@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/RagDoll 1.unity
     guid: 39115d3f00057794eb843d4cd53329f7
+  - enabled: 1
+    path: Assets/Game/Scenes/Alex_Map.unity
+    guid: fb02fdc98162d75489a84121ffc5a643
   m_configObjects: {}
