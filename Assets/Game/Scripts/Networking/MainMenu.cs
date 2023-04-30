@@ -2,9 +2,28 @@ using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public TMP_InputField lobbyName;
+    public TMP_Text countText;
+    public Slider numberCount;
+
+
+    public static MainMenu instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void OnSlider(float value)
+    {
+        countText.text = value.ToString();
+    }
 
     public void HostServer() 
     {
@@ -15,18 +34,6 @@ public class MainMenu : MonoBehaviour
         else 
         {
             MyNetworkManager.singleton.StartHost();
-        }
-    }
-
-    public void JoinServer() 
-    {
-        if (SteamLobby.instance.UsingSteam)
-        {
-            SteamLobby.instance.JoinLobby();
-        }
-        else
-        {
-            MyNetworkManager.singleton.StartClient();
         }
     }
 
