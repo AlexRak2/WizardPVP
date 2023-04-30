@@ -6253,12 +6253,13 @@ GameObject:
   - component: {fileID: 4828587011338064687}
   - component: {fileID: 3659879704770846119}
   - component: {fileID: 4503109127007803578}
-  - component: {fileID: 7470851447198759599}
-  - component: {fileID: 3659879704770846118}
-  - component: {fileID: 4828587011338064686}
-  - component: {fileID: 4828587011338064681}
-  - component: {fileID: 3659879704770846113}
   - component: {fileID: 5971777317973821897}
+  - component: {fileID: 7470851447198759599}
+  - component: {fileID: 4828587011338064686}
+  - component: {fileID: 5021496704082831868}
+  - component: {fileID: 3659879704770846113}
+  - component: {fileID: 3659879704770846118}
+  - component: {fileID: 4828587011338064681}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -6333,6 +6334,29 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   scaleSensitivity: 0.01
   timelineOffset: 0
+--- !u!114 &5971777317973821897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828587011338064684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83392ae5c1b731446909f252fd494ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 4828587010140705716}
+  clientAuthority: 1
+  syncVelocity: 1
+  clearVelocity: 0
+  velocitySensitivity: 0.1
+  syncAngularVelocity: 1
+  clearAngularVelocity: 0
+  angularVelocitySensitivity: 0.1
 --- !u!114 &7470851447198759599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6350,24 +6374,6 @@ MonoBehaviour:
   syncInterval: 0
   clientAuthority: 1
   animator: {fileID: 4323335045884651778}
---- !u!114 &3659879704770846118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4828587011338064684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70d5f15a2551d54a9c12c0e12ad50ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  camFollow: {fileID: 4828587010105346839}
-  cameraObj: {fileID: 1710084000003215600, guid: 82d9fbd7372a85f4aaf4d09953e0415a,
-    type: 3}
 --- !u!114 &4828587011338064686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6395,7 +6401,7 @@ MonoBehaviour:
   anim: {fileID: 4323335045884651778}
   lockOnTarget: {fileID: 0}
   BasedPosition: {fileID: 4828587011656446371}
---- !u!114 &4828587011338064681
+--- !u!114 &5021496704082831868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6404,18 +6410,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4828587011338064684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6772910a431d701449c1ceef5ca40dd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 35a0c7206fa46064ab355496dc335726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  CinemachineCameraTarget: {fileID: 4828587010105346839}
-  TopClamp: 70
-  BottomClamp: -30
-  CameraAngleOverride: 0
-  LockCameraPosition: 0
-  strafe: 0
+  health: 100
+  isDead: 0
+  joints:
+  - {fileID: 4828587010140705712}
+  - {fileID: 4828587011635555782}
+  - {fileID: 4828587011052553639}
+  - {fileID: 4828587010224247879}
+  - {fileID: 4828587011841496923}
+  - {fileID: 4828587010963131022}
+  - {fileID: 4828587011230877981}
+  - {fileID: 4828587011425198583}
+  - {fileID: 4828587010599784922}
+  - {fileID: 4828587011273435914}
 --- !u!114 &3659879704770846113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6438,7 +6451,7 @@ MonoBehaviour:
   rightHand: {fileID: 4828587011149636872}
   aimPoint: {fileID: 0}
   anim: {fileID: 4323335045884651778}
---- !u!114 &5971777317973821897
+--- !u!114 &3659879704770846118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6447,20 +6460,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 4828587011338064684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83392ae5c1b731446909f252fd494ae4, type: 3}
+  m_Script: {fileID: 11500000, guid: c70d5f15a2551d54a9c12c0e12ad50ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 1
+  syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  target: {fileID: 4828587010140705716}
-  clientAuthority: 1
-  syncVelocity: 1
-  clearVelocity: 0
-  velocitySensitivity: 0.1
-  syncAngularVelocity: 1
-  clearAngularVelocity: 0
-  angularVelocitySensitivity: 0.1
+  camFollow: {fileID: 4828587010105346839}
+  cameraObj: {fileID: 1710084000003215600, guid: 82d9fbd7372a85f4aaf4d09953e0415a,
+    type: 3}
+--- !u!114 &4828587011338064681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828587011338064684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6772910a431d701449c1ceef5ca40dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  CinemachineCameraTarget: {fileID: 4828587010105346839}
+  TopClamp: 70
+  BottomClamp: -30
+  CameraAngleOverride: 0
+  LockCameraPosition: 0
+  strafe: 0
 --- !u!1 &4828587011349689669
 GameObject:
   m_ObjectHideFlags: 0

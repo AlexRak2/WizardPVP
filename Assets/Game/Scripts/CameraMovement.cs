@@ -35,15 +35,18 @@ public class CameraMovement : NetworkBehaviour
     public bool strafe;
 
 
+    ClientStats clientStats;
     private void Start()
     {
         _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
         Cursor.lockState = CursorLockMode.Locked;
+        clientStats = GetComponent<ClientStats>();
     }
 
     private void LateUpdate()
     {
         if (!isOwned) return;
+        if (clientStats.isDead) return;
 
         _lookInput = new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
         CameraRotation();

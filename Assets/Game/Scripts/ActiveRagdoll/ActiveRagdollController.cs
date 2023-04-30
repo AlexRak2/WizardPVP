@@ -21,11 +21,12 @@ public class ActiveRagdollController : NetworkBehaviour
 
     public Transform lockOnTarget;
     public Transform BasedPosition;
- 
+
+    private ClientStats clientStats;
 
     void Start()
     {
-        
+        clientStats = GetComponent<ClientStats>();    
     }
 
     float horizontal;
@@ -33,7 +34,8 @@ public class ActiveRagdollController : NetworkBehaviour
     private void FixedUpdate()
     {
         if (!isOwned) return;
-        
+        if (clientStats.isDead) return;
+
         GroundCount = 0;
         for (int i = 0; i < gd.Length; i++)
         {

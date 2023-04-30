@@ -10,10 +10,7 @@ public class CombatHandler : NetworkBehaviour
     [SerializeField] private WandItem[] allWands;
     [SerializeField] private WandItem defaultWand;
     [SerializeField] private WandItem currentWand;
-
-
     [SerializeField] private GameObject rightHand;
-
     public Transform aimPoint;
     [SyncVar(hook = nameof(OnWandIndexChange))] byte currentWandIndex;
     Wand currentWandInstance;
@@ -21,12 +18,14 @@ public class CombatHandler : NetworkBehaviour
     [SerializeField] private Animator anim;
 
     IKController ikController;
+    ClientStats clientStats;
 
     private void Start()
     {
         if (!isOwned) return;
 
         ikController = GetComponent<IKController>();
+        clientStats = GetComponent<ClientStats>();
 
         Cmd_EquipWand(defaultWand.id);
     }
@@ -34,6 +33,7 @@ public class CombatHandler : NetworkBehaviour
     private void Update()
     {
         if (!isOwned) return;
+        if (clientStats.isDead) return;
 
         if (Input.GetMouseButtonDown(0)) 
         {
