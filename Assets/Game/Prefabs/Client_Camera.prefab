@@ -73,19 +73,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
-  m_ParentHash:
-  - m_Hash: -1269438207
-    m_ParentHash: 756556552
-  - m_Hash: -579035093
-    m_ParentHash: -1269438207
-  - m_Hash: 457016793
-    m_ParentHash: -1269438207
-  - m_Hash: -1958873229
-    m_ParentHash: -1269438207
-  - m_Hash: -732565300
-    m_ParentHash: 756556552
-  - m_Hash: 1202270943
-    m_ParentHash: 756556552
+  m_ParentHash: []
 --- !u!1 &1710083999079041900
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +156,7 @@ MonoBehaviour:
   CameraDistance: 1.6
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 1
   IgnoreTag: Player
   CameraRadius: 0.15
   DampingIntoCollision: 0
@@ -393,7 +381,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710084000003215600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -3.7057695e-20, w: 1}
   m_LocalPosition: {x: 0.9428524, y: 2.7995777, z: -3.3304138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

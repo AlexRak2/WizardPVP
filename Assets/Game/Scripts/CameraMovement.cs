@@ -46,9 +46,10 @@ public class CameraMovement : NetworkBehaviour
     private void LateUpdate()
     {
         if (!isOwned) return;
-        if (clientStats.isDead) return;
 
-        _lookInput = new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
+        if (!clientStats.isDead)
+            _lookInput = new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
+
         CameraRotation();
     }
 

@@ -47,7 +47,7 @@ public class ClientStats : NetworkBehaviour, IDamageable
             joint.angularXDrive = jointDrive;
             joint.angularYZDrive = jointDrive;
 
-            joint.gameObject.layer = LayerMask.NameToLayer("Default");
+            joint.gameObject.layer = LayerMask.NameToLayer("RagDoll_Ignore");
         }
     }
 
