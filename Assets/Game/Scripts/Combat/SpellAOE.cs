@@ -6,6 +6,8 @@ public class SpellAOE : MonoBehaviour
 {
     public float radius;
 
+    public float Force;
+    
     public List<IDamageable> clientHits = new List<IDamageable>();
     private void Start()
     {
@@ -24,6 +26,10 @@ public class SpellAOE : MonoBehaviour
                 client.Damage(15);
 
                 clientHits.Add(client);
+            }
+            if (hitCollider.gameObject.GetComponent<Rigidbody>())
+            {
+                hitCollider.gameObject.GetComponent<Rigidbody>().AddExplosionForce(Force, transform.position, radius,0, ForceMode.Impulse);
             }
         }
     }
