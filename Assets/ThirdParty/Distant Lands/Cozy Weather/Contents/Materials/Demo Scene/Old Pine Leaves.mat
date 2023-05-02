@@ -67,8 +67,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaClip: 0.6
+    - _AlphaCutoff: 0.5
     - _AlphaVariation: 0.2
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -82,11 +96,13 @@ Material:
     - _GlossyReflections: 1
     - _GradientOffset: 11.06
     - _GradientSmoothness: 0.08
-    - _LowerLightTransmission: 0.2
+    - _LowerLightTransmission: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: -1
+    - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
     - _SnowAmount1: 0.54
     - _SnowAttraction: 1
@@ -94,7 +110,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UpperLightTransmission: 0.2
+    - _UpperLightTransmission: 0.1
     - _VariationAmount: 0.05
     - _VariationScale: 10
     - _WindNoiseSize: 0.5
@@ -106,7 +122,7 @@ Material:
     - _BottomColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0}
     - _Color: {r: 0.28970483, g: 0.8000001, b: 0.23995335, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FilterColor: {r: 0.2721122, g: 0.71004057, b: 0.34554207, a: 1}
+    - _FilterColor: {r: 0.23967694, g: 0.770084, b: 0.3581407, a: 1}
     - _SnowColor1: {r: 1, g: 1, b: 1, a: 0}
     - _TopColor: {r: 1, g: 0.90971917, b: 0.25943398, a: 0}
     - _WindDirection: {r: 1, g: 0, b: 1, a: 0}

@@ -2,20 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mobile Sky Reference
-  m_Shader: {fileID: 4800000, guid: 5345aab62f5b3cd46b1e98b06378da88, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 837e1c5dbe187594791353f32e0704cd, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -99,8 +103,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - LightIntensity1: 1
+    - _AlphaCutoff: 0.5
     - _AltocumulusMultiplier: 2
     - _AltocumulusScale: 1
     - _BorderEffect: 0
@@ -148,6 +166,8 @@ Material:
     - _PatchworkPower: 1
     - _PatchworkVariation: 0.84696186
     - _Power: 0.364
+    - _QueueControl: -1
+    - _QueueOffset: 0
     - _RainbowIntensity: 0
     - _RainbowSize: 78.7
     - _RainbowWidth: 11
@@ -187,3 +207,4 @@ Material:
     - _SunDirection: {r: -0.05530402, g: -0.97433305, b: -0.21821257, a: 0}
     - _SunFlareColor: {r: 0.31714523, g: 0.3207547, b: 0.25267, a: 0}
     - _ZenithColor: {r: 0.06775116, g: 0.19630492, b: 0.31850946, a: 1}
+  m_BuildTextureStacks: []
