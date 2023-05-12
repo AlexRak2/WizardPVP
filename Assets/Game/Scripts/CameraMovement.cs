@@ -33,19 +33,20 @@ public class CameraMovement : NetworkBehaviour
     Vector2 _lookInput;
 
     public bool strafe;
-
+    public bool allowInput = true;
 
     ClientStats clientStats;
     private void Start()
     {
         _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         clientStats = GetComponent<ClientStats>();
     }
 
     private void LateUpdate()
     {
         if (!isOwned) return;
+        if (!allowInput) return;
 
         if (!clientStats.isDead)
             _lookInput = new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
